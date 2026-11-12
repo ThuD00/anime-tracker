@@ -4,7 +4,7 @@ export default function MyAnimeList() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to My AnimeList!</Text>
-      <Text>Track your favorite anime</Text>
+      <Text>Manage your anime collection</Text>
     </View>
   );
 }

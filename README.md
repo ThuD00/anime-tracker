@@ -8,7 +8,7 @@ Käyttäjän oma seurantalista ja katselutiedot tallennetaan laitteen paikallise
 ## Ominaisuudet 
 Anime Trackerissa sitä käytetään esimerkiksi:
 
-- Animejen hakeminen Jikan API.
+- Animejen hakeminen AniList/Tenrai API.
 - Animejen tietojen tarkastelu.
 - Animejen lisääminen henkilökohtaiseen seurantalistaan.
 - Katsottujen jaksojen määrän seuranta.
@@ -24,7 +24,18 @@ Sovellus tarjoaa käyttäjälle henkilökohtaisia katselutilastoja, kuten:
 - Katselumäärät eri kuukausina.
 - Animejen jakautuminen eri genreihin.
 
-https://jikan.moe
+## Käytetyt teknologiat
+
+- TypeScript – ohjelmointikieli.
+- React Native – mobiilisovelluksen kehittäminen.
+- Expo & Expo Go – sovelluksen kehitys ja testaaminen.
+- Expo Router – navigointi ja sivujen hallinta.
+- Jikan API – anime-tietojen hakeminen REST API kautta.
+- AsyncStorage – tietojen paikallinen tallentaminen.
+- React Native Paper – käyttöliittymäkomponentit.
+- React Native Chart Kit – tilastojen visualisointi.
+
+https://tenrai.org tai https://docs.anilist.co
 Jikan API: käyttörajoituksia ja turhat api kutsut -> toteuta pieni viive käyttäjän kirjoittaessa (debounce)
 components	Uudelleenkäytettävät käyttöliittymäkomponentit
 services	API-kutsut ja anime-tietojen hakeminen

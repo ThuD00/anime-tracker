@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 
 export default function RootLayout() {
   return (
-    //alavalikkp
+    //alavalikko
     <Tabs
       //määrittää yhden navigoitavan sivun
       screenOptions={{
