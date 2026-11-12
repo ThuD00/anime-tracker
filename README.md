@@ -1,14 +1,14 @@
 # Anime-tracker
 Anime Tracker on React Native -pohjainen mobiilisovellus, jonka avulla käyttäjä voi seurata katsomiaan animeja ja hallita omaa anime-seurantalistaansa.
 
-Sovelluksen käyttäjä voi hakea animeja Jikan API:n avulla, tarkastella niiden tietoja, lisätä niitä henkilökohtaiseen seurantalistaan, seurata katsottuja jaksoja, antaa omia arvioita ja tarkastella katselutilastoja. 
+Sovelluksen käyttäjä voi hakea animeja AniList API:n avulla, tarkastella niiden tietoja, lisätä niitä henkilökohtaiseen seurantalistaan, seurata katsottuja jaksoja, antaa omia arvioita ja tarkastella katselutilastoja. 
 
 Käyttäjän oma seurantalista ja katselutiedot tallennetaan laitteen paikalliseen tallennustilaan.
 
 ## Ominaisuudet 
 Anime Trackerissa sitä käytetään esimerkiksi:
 
-- Animejen hakeminen AniList/Tenrai API.
+- Animejen hakeminen AniList API.
 - Animejen tietojen tarkastelu.
 - Animejen lisääminen henkilökohtaiseen seurantalistaan.
 - Katsottujen jaksojen määrän seuranta.
@@ -35,8 +35,8 @@ Sovellus tarjoaa käyttäjälle henkilökohtaisia katselutilastoja, kuten:
 - React Native Paper – käyttöliittymäkomponentit.
 - React Native Chart Kit – tilastojen visualisointi.
 
-https://tenrai.org tai https://docs.anilist.co
-Jikan API: käyttörajoituksia ja turhat api kutsut -> toteuta pieni viive käyttäjän kirjoittaessa (debounce)
+https://docs.anilist.co
+AniList API: käyttörajoituksia ja turhat api kutsut -> toteuta pieni viive käyttäjän kirjoittaessa (debounce)
 components	Uudelleenkäytettävät käyttöliittymäkomponentit
 services	API-kutsut ja anime-tietojen hakeminen
 storage	AsyncStorage-toiminnot

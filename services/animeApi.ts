@@ -1,7 +1,10 @@
+import { Anime } from "../types/Anime";
+
 const API_URL = 'https://graphql.anilist.co';
 
-export async function searchAnime(search: string) {
+export async function searchAnime(search: string): Promise<Anime[]> {
 
+  //page: antaa monta tuloksia kerral + pagination
   const query = `
   query ($search: String) {
     Page { 

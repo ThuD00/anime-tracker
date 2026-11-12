@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, ScrollView, 
          Pressable, ActivityIndicator, Image } from 'react-native';
 import { searchAnime } from '../services/animeApi';
+import { Anime } from '../types/Anime';
 
+//tyyppi määritelty, virheenkäsittely jos anime:ta ei löydy, hakutulosten määrä lisäys
 export default function SearchAnime() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [result, setResult] = useState<any[]>([]);
+  const [result, setResult] = useState<Anime[]>([]);
   const [loading, setLoading] = useState(false);
   //Virhekäsittely: 403
   const [error, setError] = useState('');
@@ -22,7 +24,7 @@ export default function SearchAnime() {
       const anime = await searchAnime(searchQuery);
       setResult(anime);
     } catch (error) {
-      console.error('failed: ', error)
+      //console.error('failed: ', error)
       setError('Failed to search anime. Please try again after few seconds');
     } finally {
       setLoading(false);
@@ -59,12 +61,22 @@ export default function SearchAnime() {
         <Text style={styles.errorText}>{error}</Text>
       )}
 
+      {/* !loading: varmistaa ettei n näytetä kesken haun */}
+      {!loading && result.length > 0 && (
+        <Text style={styles.resultCount}>
+          Found {result.length} anime
+        </Text>
+      )}
+
       {result.map((anime) => (
         <View key={anime.id} style={styles.resultCard}>
-          <Image 
+          {/* tarkistaa onko kuva olemassa */}
+          {anime.coverImage?.large && (
+            <Image 
             source={{ uri: anime.coverImage.large }}
             style={styles.resultImage}
-          />
+            />
+          )}
 
           <View style={styles.resultInfo}>
             <Text style={styles.animeTitle}>
@@ -79,6 +91,13 @@ export default function SearchAnime() {
           </View>
         </View>
       ))}
+
+      {/* haku ei ole käynnis/tuloksia x/!hakukenttä.empty/!virhe */}
+      {!loading && result.length === 0 && searchQuery.trim() !== '' && !error && (
+          <Text style={styles.noResults}>
+            No anime found. Try another search.
+          </Text>
+        )}
 
     </ScrollView>
   );
@@ -144,5 +163,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+  },
+  noResults: {
+    marginTop: 20,
+    textAlign: 'center',
+    color: '#777',
+    fontSize: 14,
+  },
+  resultCount: {
+    marginTop: 20,
+    marginBottom: 5,
+    fontSize: 14,
+    color: '#777',
   },
 });
