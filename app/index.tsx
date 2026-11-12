@@ -3,7 +3,7 @@ import { animeData, currentlyWatching, recentlyWatched } from '../data/animeData
 
 export default function HomeScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Discover Anime!</Text>
       <Text style={styles.subtitle}>Find your next favorite anime.</Text>
 
@@ -99,9 +99,11 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-  flexGrow: 1,
-  padding: 20,
-  backgroundColor: '#fff',
+    //määrittää kuinka suuren osan säiliön ylim.
+    //vapaast tilasta elementti saa kasvaessa
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 22,
