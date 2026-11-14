@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, TextInput, ScrollView, Image } from 'react-native';
-import { animeData, currentlyWatching, recentlyWatched } from '../data/animeData';
+import { View, Text, StyleSheet, TextInput, ScrollView, Image, Pressable } from 'react-native';
+import { animeData, currentlyWatching, recentlyWatched } from '../../data/animeData';
 
 export default function HomeScreen() {
   return (

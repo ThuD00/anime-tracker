@@ -1,55 +1,22 @@
-import { Tabs } from 'expo-router';
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    //alavalikko
-    <Tabs
-      //määrittää yhden navigoitavan sivun
-      screenOptions={{
-        headerShown: true,
-        tabBarActiveTintColor: '#6750A4',
-        tabBarInactiveTintColor: 'gray',
-      }}
-    >
-      <Tabs.Screen
-        name="index"
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
         options={{
-          title: 'Home',
-          tabBarLabel: 'Home',
+          headerShown: false,
         }}
       />
 
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: 'Search Anime',
-          tabBarLabel: 'Search',
-        }}
-      />
-
-      <Tabs.Screen
-        name="my-list"
-        options={{
-          title: 'My AnimeList',
-          tabBarLabel: 'My List',
-        }}
-      />
-
-      <Tabs.Screen
-        name="statistics"
-        options={{
-          title: 'Statistics',
-          tabBarLabel: 'Statistics',
-        }}
-      />
-
-      <Tabs.Screen
+      <Stack.Screen
         name="anime/[id]"
         options={{
-          //piilottaa animen yksittäisen tietosivun alavalikosta
-          href: null,
+          title: 'Anime Details',
         }}
       />
-    </Tabs>
-  );
+    </Stack>
+    
+  )
 }

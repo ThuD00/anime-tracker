@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, ScrollView, 
          Pressable, ActivityIndicator, Image } from 'react-native';
-import { searchAnime } from '../services/animeApi';
-import { Anime } from '../types/Anime';
+import { searchAnime } from '../../services/animeApi';
+import { Anime } from '../../types/Anime';
+import { router } from 'expo-router';
 
-//tyyppi määritelty, virheenkäsittely jos anime:ta ei löydy, hakutulosten määrä lisäys
 export default function SearchAnime() {
   const [searchQuery, setSearchQuery] = useState('');
   const [result, setResult] = useState<Anime[]>([]);
@@ -69,7 +69,13 @@ export default function SearchAnime() {
       )}
 
       {result.map((anime) => (
-        <View key={anime.id} style={styles.resultCard}>
+        //<View key={anime.id} style={styles.resultCard}>
+        <Pressable 
+          key={anime.id} 
+          style={styles.resultCard}
+          //push: navigoi uudelle sivulle
+          onPress={() => router.push(`/anime/${anime.id}`)}
+        >
           {/* tarkistaa onko kuva olemassa */}
           {anime.coverImage?.large && (
             <Image 
@@ -89,7 +95,7 @@ export default function SearchAnime() {
                Episodes: {anime.episodes ?? 'Unknown'}
             </Text>
           </View>
-        </View>
+        </Pressable>
       ))}
 
       {/* haku ei ole käynnis/tuloksia x/!hakukenttä.empty/!virhe */}

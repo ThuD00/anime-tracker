@@ -30,7 +30,7 @@ Sovellus tarjoaa käyttäjälle henkilökohtaisia katselutilastoja, kuten:
 - React Native – mobiilisovelluksen kehittäminen.
 - Expo & Expo Go – sovelluksen kehitys ja testaaminen.
 - Expo Router – navigointi ja sivujen hallinta.
-- Jikan API – anime-tietojen hakeminen REST API kautta.
+- AniList API – anime-tietojen hakeminen REST API kautta.
 - AsyncStorage – tietojen paikallinen tallentaminen.
 - React Native Paper – käyttöliittymäkomponentit.
 - React Native Chart Kit – tilastojen visualisointi.
